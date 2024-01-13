@@ -8,6 +8,9 @@ export function LayoutFooter() {
       <section className="screen-center copyright">
         <p>版权所有 © 上海安势信息技术有限公司</p>
         <p>沪ICP备2021017773号</p>
+        <div className="site-support">
+          本网站支持 <div className="box">IPV6</div>
+        </div>
       </section>
     </footer>
   )

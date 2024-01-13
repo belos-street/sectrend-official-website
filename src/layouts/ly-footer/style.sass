@@ -1,3 +1,5 @@
+@import '@/styles/var.sass'
+
 footer.layout-footer
   width: 100%
   background: linear-gradient(84deg, #1B45B4 3%, #1C2792 96.84%)
@@ -6,8 +8,15 @@ footer.layout-footer
   flex-direction: column
   .copyright
     padding: 12px
-    font-size: 14px
+    font-size: $sc-font-s4
     color: rgba(255, 255, 255, 0.80)
     display: flex
     gap: 12px
     flex-wrap: wrap
+    .site-support
+      display: flex
+      gap: 6px
+      .box
+        border-radius: 2px
+        border: 1px solid #FFF
+        padding: 1px 2px
