@@ -6,6 +6,71 @@ footer.layout-footer
   display: flex
   align-items: center
   flex-direction: column
+  text-align: center
+
+  .information
+    padding: 40px 24px
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 36px
+    color: rgba(255, 255, 255, 0.80)
+    font-size: $sc-font-s4
+    .company
+      border-radius: 12px
+      background: rgba(0, 0, 0, 0.20)
+      display: flex
+      padding: 24px
+      flex-direction: column
+      align-items: flex-start
+      width: 318px
+      gap: 12px
+      $logo-width: 175px
+      .sectrend-logo
+        width: $logo-width
+        height: 25px
+        background-image: $sectrend-logo-text
+        background-size: 100%
+        margin-bottom: 12px
+      .line
+        width: $logo-width
+        border-top: 1px solid #fff
+        margin-bottom: 12px
+      .slogan
+        color: $sc-fc-w-p1
+      .slogan-en
+        margin-bottom: 12px
+      .text-icon
+        display: flex
+        align-items: start
+        span
+          margin-top: 2px
+        p
+          margin-left: 8px
+          text-align: left
+    .list
+      li
+        text-align: left
+
+        margin-bottom: 12px
+    h3
+      text-align: left
+      margin-bottom: 24px
+      font-size: $sc-font-s3
+      color: $sc-fc-w-p1
+    .follow
+      .container
+        display: flex
+        gap: 24px
+        .qr-code
+          width: 120px
+          height: 120px
+          margin-bottom: 10px
+        .business
+          background-image: $qr-code-business
+        .wechat
+          background-image: $qr-code-wechat
+
   .copyright
     padding: 12px
     font-size: $sc-font-s4
@@ -15,8 +80,13 @@ footer.layout-footer
     flex-wrap: wrap
     .site-support
       display: flex
-      gap: 6px
+      gap: 4px
       .box
         border-radius: 2px
         border: 1px solid #FFF
-        padding: 1px 2px
+        padding: 1px 3px
+
+@media (max-width: $phone-width-max)
+  footer.layout-footer
+    .information
+      flex-direction: column
