@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.sass'
-import { MailOutlined } from '@ant-design/icons'
+import { MailOutlined, PhoneOutlined, BankOutlined } from '@ant-design/icons'
 
 export function LayoutFooter() {
   return (
@@ -16,11 +16,11 @@ export function LayoutFooter() {
             <p>info@secrted.com.cn</p>
           </section>
           <section className="text-icon">
-            <MailOutlined />
+            <PhoneOutlined />
             <p>021-64181628</p>
           </section>
           <section className="text-icon">
-            <MailOutlined />
+            <BankOutlined />
             <p>上海市徐汇区云锦路500号绿地汇中心A座2018室</p>
           </section>
         </section>
