@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import StyledComponentsRegistry from '@/components/AntdRegistry'
 import '@/styles/base.sass'
 import '@/styles/common.sass'
+import { LayoutFooter } from '@/layouts/ly-footer'
+import { LayoutHeader } from '@/layouts/ly-header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,9 +16,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body className={inter.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
+      <StyledComponentsRegistry>
+        <body className={inter.className}>
+          <LayoutHeader />
+          {children}
+          <LayoutFooter />
+        </body>
+      </StyledComponentsRegistry>
     </html>
   )
 }

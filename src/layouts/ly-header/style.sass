@@ -1,0 +1,24 @@
+@import '@/styles/var.sass'
+$height: 64px
+
+header.layout__header
+  height: $height
+  width: 100vw
+  position: fixed
+  z-index: 100
+  display: flex
+  justify-content: center
+  align-items: center
+  .header__container
+    justify-content: space-between
+  .logo__text--black
+    background: $sectrend-logo-text-black
+    height: 24px
+    width: 165px
+    background-size: 100%
+  .logo__divider
+    height: 100%
+  #header-ant-menu
+    flex: 1
+    background: transparent
+    border-bottom: none
