@@ -1,5 +1,6 @@
 @import '@/styles/var.sass'
 $height: 64px
+$hide-menu-width: 800px
 
 header.layout__header
   height: $height
@@ -9,16 +10,47 @@ header.layout__header
   display: flex
   justify-content: center
   align-items: center
+
   .header__container
     justify-content: space-between
+    gap: 24px
+    padding: 0 24px
   .logo__text--black
     background: $sectrend-logo-text-black
     height: 24px
     width: 165px
     background-size: 100%
-  .logo__divider
-    height: 100%
-  #header-ant-menu
+  .header__container--left
+    display: flex
+    align-items: center
+    font-size: 20px
+    white-space: nowrap
+    .divider
+      height: 1.3em
+      border-inline-start: 2px solid black
+  .header__container--right
+    display: flex
+    align-items: center
+    gap: 24px
+  .header__container--center
     flex: 1
-    background: transparent
-    border-bottom: none
+    display: flex
+    justify-content: center
+    #header-ant-menu
+      background: transparent
+      border-bottom: none
+      justify-content: center
+
+  @media (max-width: $hide-menu-width)
+  .header__container--center
+    display: none
+    #header-ant-menu--phone
+      display: block
+
+  @media (min-width: $hide-menu-width)
+    .header__container--center
+      display: flex
+      #header-ant-menu
+        width: 100%
+    #header-ant-menu--phone
+      display: none

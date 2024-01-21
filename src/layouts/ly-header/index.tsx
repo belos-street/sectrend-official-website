@@ -1,7 +1,9 @@
 'use client'
 
-import { Divider, Menu, MenuProps } from 'antd'
+import { Divider, Dropdown, Menu, MenuProps } from 'antd'
 import './style.sass'
+import { MenuOutlined } from '@ant-design/icons'
+import { Internationalization } from './src/internationalization'
 
 const items: MenuProps['items'] = [
   {
@@ -9,7 +11,7 @@ const items: MenuProps['items'] = [
     key: 'mail'
   },
   {
-    label: 'Navigation Three - Submenu',
+    label: '安全产品',
     key: 'SubMenu',
     children: [
       {
@@ -41,6 +43,18 @@ const items: MenuProps['items'] = [
         ]
       }
     ]
+  },
+  {
+    label: '安全服务',
+    key: 'mail1'
+  },
+  {
+    label: '行业解决方案',
+    key: 'mail2'
+  },
+  {
+    label: '关于安势',
+    key: 'mail3'
   }
 ]
 export const LayoutHeader: React.FC = () => {
@@ -49,11 +63,18 @@ export const LayoutHeader: React.FC = () => {
       <section className="header__container screen-center">
         <section className="header__container--left">
           <div className="logo__text--black" />
-          <Divider type="vertical" />
+          <Divider type="vertical" className="divider" />
           安势
         </section>
-        <Menu mode="horizontal" items={items} id="header-ant-menu" />
-        <section className="header__container--right">233</section>
+        <section className="header__container--center">
+          <Menu mode="horizontal" items={items} id="header-ant-menu" />
+        </section>
+        <section className="header__container--right">
+          <Internationalization />
+          <Dropdown menu={{ items }} placement="bottomRight">
+            <MenuOutlined id="header-ant-menu--phone" />
+          </Dropdown>
+        </section>
       </section>
     </header>
   )

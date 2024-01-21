@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="zh-CN">
       <StyledComponentsRegistry>
-        <body className={inter.className}>
+        <body className={inter.className} id="sectrend-site">
           <LayoutHeader />
           {children}
           <LayoutFooter />

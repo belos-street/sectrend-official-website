@@ -1,11 +1,33 @@
+@import '@/styles/var.sass'
+
 .banner__container
   width: 100vw
-  height: 642px
+  height: 40vh
+  min-height: 642px
+  display: flex
+  justify-content: center
+  .container__box
+    flex-direction: column
+    padding: 0 24px
+    gap: 24px
+    h1
+      font-size: 4vh
+      color: $sc-fc-p1
+      white-space: nowrap
+    p
+      font-size: $sc-font-s4
+      color: $sc-fc-p2
+    .btn__group
+      display: flex
+      gap: 24px
+      margin-top: 24px
 
-.banner__container--first
-  background-image: url(../../resource/img/banner-frist.png)
-  background-size: cover
-  background-position: center
+  &.banner__container--first
+    background-image: url(../../resource/img/banner-frist.png)
+    background-size: cover
+    background-position: center
+  &.banner__container--second
+    background-color: gray
 
 .banner__dots
   button
