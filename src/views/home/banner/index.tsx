@@ -13,18 +13,16 @@ export const Banner: React.FC = () => (
           </h1>
           <p>安势信息专注于构建DevSecOps工具链，致力于提供世界级的应用安全产品</p>
           <div className="btn__group">
-            <Button type="primary" size="large">
-              了解详情
-            </Button>
-            <Button type="primary" ghost size="large">
+            <Button type="primary">了解详情</Button>
+            <Button type="primary" ghost>
               联系我们
             </Button>
           </div>
         </div>
       </div>
     </div>
-    <div>
+    {/* <div>
       <div className="banner__container banner__container--second"></div>
-    </div>
+    </div> */}
   </Carousel>
 )

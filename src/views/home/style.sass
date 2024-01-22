@@ -2,10 +2,11 @@
 
 .banner__container
   width: 100vw
-  height: 40vh
+  height: 642px
   min-height: 642px
   display: flex
   justify-content: center
+  transition: $transition-ease
   .container__box
     flex-direction: column
     padding: 0 24px
@@ -23,7 +24,7 @@
       margin-top: 24px
 
   &.banner__container--first
-    background-image: url(../../resource/img/banner-frist.png)
+    background-image: url(../../resource/img/banner-frist.webp)
     background-size: cover
     background-position: center
   &.banner__container--second
@@ -32,3 +33,29 @@
 .banner__dots
   button
     background: #364d79 !important
+
+@media (max-height: $screen-height-max)
+  .banner__container
+    .container__box
+      h1
+        font-size: $sc-font-s2
+
+@media (min-height: $screen-height-min)
+  .banner__container
+    .container__box
+      h1
+        font-size: 56px
+
+@media (max-width: $phone-width-max)
+  .banner__container
+    &.banner__container--first
+      background-position: 57%
+
+@media (max-width: $hide-menu-width)
+  .banner__container
+    .container__box
+      justify-content: flex-end
+      align-items: center
+      text-align: center
+      margin-bottom: 24px
+      gap: 6px

@@ -4,6 +4,7 @@ import { Divider, Dropdown, Menu, MenuProps } from 'antd'
 import './style.sass'
 import { MenuOutlined } from '@ant-design/icons'
 import { Internationalization } from './src/internationalization'
+import { useScrollDistance } from '@/hooks/useScrollDistance'
 
 const items: MenuProps['items'] = [
   {
@@ -57,9 +58,12 @@ const items: MenuProps['items'] = [
     key: 'mail3'
   }
 ]
+
 export const LayoutHeader: React.FC = () => {
+  const { scrollDistance } = useScrollDistance()
+
   return (
-    <header className="layout__header">
+    <header className={`layout__header${scrollDistance > 0 ? ' layout__header--scroll' : ''}`}>
       <section className="header__container screen-center">
         <section className="header__container--left">
           <div className="logo__text--black" />

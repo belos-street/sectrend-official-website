@@ -1,6 +1,5 @@
 @import '@/styles/var.sass'
 $height: 64px
-$hide-menu-width: 800px
 
 header.layout__header
   height: $height
@@ -10,6 +9,9 @@ header.layout__header
   display: flex
   justify-content: center
   align-items: center
+  background: transparent
+  &.layout__header--scroll
+    background: #fff
 
   .header__container
     justify-content: space-between

@@ -1,0 +1,16 @@
+import { useEffect, useState } from 'react'
+
+/**
+ * 获取滚动条离顶部距离
+ */
+export function useScrollDistance() {
+  const [scrollDistance, setScrollDistance] = useState<number>(0)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollDistance(window.scrollY)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  return { scrollDistance, setScrollDistance }
+}
