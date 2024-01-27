@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import StyledComponentsRegistry from '@/components/AntdRegistry'
 import '@/styles/base.sass'
 import '@/styles/common.sass'
+import 'animate.css'
 import { LayoutFooter } from '@/layouts/ly-footer'
 import { LayoutHeader } from '@/layouts/ly-header'
 
