@@ -144,5 +144,54 @@
   //   animation: identifier233 0.5s infinite linear
 
 /* 实践 */
+$practice-gap: 36px
 .practice__section
   background-color: #f7fcff
+
+  .practice__content
+    flex-flow: wrap
+    gap: $practice-gap
+    align-items: stretch
+    margin-top: $practice-gap / 2
+  .practice__item
+    @include box-border()
+    padding: 24px
+    width: calc( 50% - ($practice-gap / 2))
+    display: flex
+    gap: 45px
+    align-items: center
+    justify-content: space-between
+    .practice__item--left
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      font-size: $sc-font-s4
+      gap: 24px
+      p
+        color: $sc-fc-p2
+    h1
+      text-align: start
+      font-size: $sc-font-s2
+      color: $sc-fc-p-p1
+    img
+      width: 200px
+      height: 200px
+
+@media (max-width: $screen-height-max)
+  .practice__content
+    flex-direction: column
+    .practice__item
+      width: 100%
+      padding: 12px
+      padding-right: 0
+      gap: 6px
+      .practice__item--left
+        gap: 12px
+      h1
+        font-size: $sc-font-s4
+      p
+        font-size: $sc-font-s5
+      img
+        width: 120px
+        height: 120px

@@ -2,11 +2,11 @@
 import { Tabs, Button } from 'antd'
 import sca_preview from '@/resource/img/sca_preview.png'
 import Image from 'next/image'
-import { useDeviceWidth } from '@/hooks/useDeviceWidth'
-import { useEffect, useState } from 'react'
-import { useTabsPosition } from '@/hooks/useTabsPosition'
+// import { useDeviceWidth } from '@/hooks/useDeviceWidth'
+// import { useEffect, useState } from 'react'
+// import { useTabsPosition } from '@/hooks/useTabsPosition'
 
-const changeDeviceWidth = 1000 //当浏览器宽度低于1000px，切换mobile排版
+// const changeDeviceWidth = 1000 //当浏览器宽度低于1000px，切换mobile排版
 const items = [
   {
     key: 'sca',
@@ -45,7 +45,7 @@ const schemeBtn = () => {
 
 export const ProductSection: React.FC = () => {
   // const { position } = useTabsPosition()
-  const { windowWidth } = useDeviceWidth()
+  // const { windowWidth } = useDeviceWidth()
   return (
     <section className="product__section section__container">
       <h1>软件供应链安全，从代码安全开始</h1>
@@ -68,7 +68,7 @@ export const ProductSection: React.FC = () => {
                     <p className="doc">{content.doc}</p>
                     <div>{schemeBtn()}</div>
                   </div>
-                  <Image src={content.img} alt={content.title} />
+                  <Image priority={true} src={content.img} alt={content.title} />
                 </div>
               )
             }
