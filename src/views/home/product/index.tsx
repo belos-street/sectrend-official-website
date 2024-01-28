@@ -44,7 +44,7 @@ const schemeBtn = () => {
 }
 
 export const ProductSection: React.FC = () => {
-  const { position } = useTabsPosition()
+  // const { position } = useTabsPosition()
   const { windowWidth } = useDeviceWidth()
   return (
     <section className="product__section section__container">
@@ -55,7 +55,7 @@ export const ProductSection: React.FC = () => {
           className="animate__animated animate__fadeIn"
           defaultActiveKey="sca"
           animated={{ inkBar: true, tabPane: true }}
-          tabPosition={position}
+          tabPosition={'top'}
           items={items.map((item) => {
             const { content } = item
             return {

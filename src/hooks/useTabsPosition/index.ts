@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { throttle } from 'lodash'
 type TabPosition = 'top' | 'left'
 const changeDeviceWidth = 1000 //当浏览器宽度低于1000px，切换mobile排版
+
 export function useTabsPosition() {
   const [position, setPosition] = useState<TabPosition>('top') // 默认值为纵向排版
 
