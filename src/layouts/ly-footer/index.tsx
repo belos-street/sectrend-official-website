@@ -1,10 +1,15 @@
 import React from 'react'
 import './style.sass'
 import { MailOutlined, PhoneOutlined, BankOutlined } from '@ant-design/icons'
+import Image from 'next/image'
+import sologan_img from './img/slogan.webp'
 
 export function LayoutFooter() {
   return (
     <footer className="layout-footer">
+      <section className="show">
+        <Image src={sologan_img} alt="正本清源，不止于安全" />
+      </section>
       <section className="screen-center information">
         <section className="company">
           <div className="sectrend-logo" />

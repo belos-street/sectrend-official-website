@@ -1,5 +1,6 @@
 'use client'
 
+import { debounce } from 'lodash'
 import { useState, useEffect } from 'react'
 
 export function useDeviceWidth() {
@@ -15,7 +16,7 @@ export function useDeviceWidth() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth)
     }
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', debounce(handleResize, 1000))
 
     // 组件卸载时移除事件监听器
     return () => {

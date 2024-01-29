@@ -1,3 +1,4 @@
+import { debounce } from 'lodash'
 import { useEffect, useState } from 'react'
 
 /**
@@ -9,7 +10,7 @@ export function useScrollDistance() {
     const handleScroll = () => {
       setScrollDistance(window.scrollY)
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', debounce(handleScroll, 200))
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   return { scrollDistance, setScrollDistance }

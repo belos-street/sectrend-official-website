@@ -1,0 +1,32 @@
+.sc-tabs
+  display: flex
+  flex-direction: column
+
+  .sc-tab__header
+    display: flex
+    justify-content: space-around
+  .tab__header--item
+    padding: 10px 20px
+    font-size: 16px
+    cursor: pointer
+    transition: all 0.4s ease-in-out
+    position: relative
+    &:hover
+      color: #1A62F5
+    &::after
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 0
+      height: 2px
+      border: 50%
+      background: transparent
+  .header__item--active
+    transition: all 0.4s ease-in-out
+    color: #1A62F5
+    &::after
+      width: 100%
+      background: #1A62F5
+      transition: all 0.4s ease-in-out
+    &:hover::after

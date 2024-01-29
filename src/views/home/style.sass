@@ -62,20 +62,11 @@
 
 /** product */
 .product__section
-  .screen__normal--hide
-
-  .ant-tabs
-    width: 100%
-  .ant-tabs-nav:before
-    border-bottom: none!important
-  .ant-tabs-nav-list
-    width: 100%
-    justify-content: space-around
-    .ant-tabs-tab
-      padding: 24px
-      font-size: $sc-font-s2
-  .ant-tabs-content-holder
-    margin-top: 24px
+  .tab__header--item
+    padding: 24px
+    font-size: $sc-font-s2
+  .sc-tab__content
+    margin-top: 48px
   .tab__content
     @include box-border
     padding: 24px
@@ -94,15 +85,14 @@
       justify-content: space-between
     .screen__normal
       visibility: hidden
-
   h2
     font-size: $sc-font-s2
     color: $sc-fc-p-p1
   p
     font-size: $sc-font-s4
     color: $sc-fc-p-p2
-  .doc
-    text-indent: 2em
+  .text-slogan
+    margin-top: 12px
 
   /* 低于1000px */
   .screen__small
@@ -146,8 +136,8 @@
 /* 实践 */
 $practice-gap: 36px
 .practice__section
-  background-color: #f7fcff
-
+  background: url('../../resource/vector/banner_bg.svg')
+  padding-bottom: 80px
   .practice__content
     flex-flow: wrap
     gap: $practice-gap
@@ -175,12 +165,13 @@ $practice-gap: 36px
       font-size: $sc-font-s2
       color: $sc-fc-p-p1
     img
-      width: 200px
-      height: 200px
+      width: 180px
+      height: 180px
 
 @media (max-width: $screen-height-max)
   .practice__content
     flex-direction: column
+    padding: 0
     .practice__item
       width: 100%
       padding: 12px
@@ -195,3 +186,15 @@ $practice-gap: 36px
       img
         width: 120px
         height: 120px
+
+/* cooperate */
+.cooperate__section
+  margin-bottom: 80px
+  display: flex
+  flex-direction: column
+  gap: 36px
+  .img__container
+    display: flex
+    gap: 36px
+    flex-wrap: wrap
+    justify-content: center

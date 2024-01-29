@@ -14,7 +14,7 @@ type Practice = {
 
 const practiceList: Practice[] = [
   {
-    title: '互联网行业痛点',
+    title: '互联网行业痛点&解决方案',
     content: [
       '组件通用漏洞风险急剧上',
       '开源软件许可证繁多且复杂',
@@ -24,17 +24,17 @@ const practiceList: Practice[] = [
     img: internet_img
   },
   {
-    title: '汽车行业痛点',
+    title: '汽车行业痛点&解决方案',
     content: ['V型开发流程的弊端导致发现风险滞后', '代码量激增导致攻击类型多样', '出海面临的各项合规标准及法律风险'],
     img: car_img
   },
   {
-    title: '医疗器械行业痛点',
+    title: '医疗器械行业痛点&解决方案',
     content: ['SBOM逐渐成为医疗器械上市前的基本要求', '一旦因信息安全造成事故', '合规要求直接影响医疗器械产品能否上市'],
     img: medical_img
   },
   {
-    title: '半导体行业痛点',
+    title: '半导体行业痛点&解决方案',
     content: ['开源许可证合规问题', '漏洞和安全补丁', '代码质量和可信度', '依赖关系管理'],
     img: semiconductor_img
   }
