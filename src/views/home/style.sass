@@ -168,7 +168,7 @@ $practice-gap: 36px
       width: 180px
       height: 180px
 
-@media (max-width: $screen-height-max)
+@media (max-width: $screen-width-max)
   .practice__content
     flex-direction: column
     padding: 0
@@ -198,3 +198,26 @@ $practice-gap: 36px
     gap: 36px
     flex-wrap: wrap
     justify-content: center
+@media (max-width: $screen-width-max)
+  .cooperate__section
+    .img__container
+      img
+        height: 2vmax
+        width: auto
+
+/* article */
+
+$article-gap: 36px
+.article__section
+  --article-item-height_large: 520px
+  --article-item-height: 260px
+  background: url('../../resource/vector/banner_bg.svg')
+  .article__content
+    display: flex
+    gap: $article-gap
+    flex-wrap: wrap
+    .article-content--item
+      width: calc( 50% - $article-gap/2 )
+      padding: 32px
+      height: var(--article-item-height)
+      @include box-border

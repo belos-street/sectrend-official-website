@@ -49,7 +49,6 @@ export const ProductSection: React.FC = () => {
   return (
     <section className="product__section section__container">
       <h1>软件供应链安全，从代码安全开始</h1>
-
       {windowWidth >= ChangeDeviceWidth && (
         <div className="screen-center">
           <AsTabs

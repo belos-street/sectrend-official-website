@@ -3,12 +3,14 @@ import './style.sass'
 import { MailOutlined, PhoneOutlined, BankOutlined } from '@ant-design/icons'
 import Image from 'next/image'
 import sologan_img from './img/slogan.webp'
+import anan_img from '@/resource/img/anan_model.png'
 
 export function LayoutFooter() {
   return (
     <footer className="layout-footer">
       <section className="show">
-        <Image src={sologan_img} alt="正本清源，不止于安全" />
+        <Image src={sologan_img} alt="正本清源，不止于安全" className="sologan__img" />
+        <Image src={anan_img} alt="" className="anan__img" />
       </section>
       <section className="screen-center information">
         <section className="company">
