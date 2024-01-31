@@ -214,10 +214,21 @@ $article-gap: 36px
   background: url('../../resource/vector/banner_bg.svg')
   .article__content
     display: flex
+    flex-direction: column
     gap: $article-gap
-    flex-wrap: wrap
+    margin-bottom: 80px
+    .article-row
+      width: 100%
+      display: flex
+      gap: $article-gap
     .article-content--item
       width: calc( 50% - $article-gap/2 )
       padding: 32px
       height: var(--article-item-height)
       @include box-border
+    // .article-item--insights:hover
+    //   width: 75%
+    //   height: var(--article-item-height_large)
+    //   transition: all 0.5s ease-in-out
+
+  @keyframes identifier

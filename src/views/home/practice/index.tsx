@@ -58,7 +58,7 @@ export const Practice: React.FC = () => {
                 <Button type="primary">查看方案</Button>
               </div>
             </div>
-            <Image src={item.img} alt={item.title} />
+            <Image src={item.img} alt={item.title} priority={true} />
           </div>
         ))}
       </section>
