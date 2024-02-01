@@ -221,14 +221,31 @@ $article-gap: 36px
       width: 100%
       display: flex
       gap: $article-gap
-    .article-content--item
-      width: calc( 50% - $article-gap/2 )
-      padding: 32px
       height: var(--article-item-height)
+    .article-row--actived
+      height: var(--article-item-height_large)
+    .article-content--item
+      flex: 1
+      padding: 32px
+      height: 100%
       @include box-border
-    // .article-item--insights:hover
-    //   width: 75%
-    //   height: var(--article-item-height_large)
-    //   transition: all 0.5s ease-in-out
 
-  @keyframes identifier
+.article-item
+  display: flex
+  gap: 32px
+  justify-content: space-between
+  transition: $transition-ease
+  .article-item__header
+    display: flex
+    flex-direction: column
+    gap: 24px
+    .ant-tag
+      font-size: $sc-font-s4
+      padding: 2px 8px
+    .article-item__describe
+      font-size: $sc-font-s3
+
+.article-row--actived
+  .article-item
+    flex-direction: column
+    justify-content: space-between

@@ -3,7 +3,7 @@ import './style.sass'
 import { MailOutlined, PhoneOutlined, BankOutlined } from '@ant-design/icons'
 import Image from 'next/image'
 import sologan_img from './img/slogan.webp'
-import anan_img from '@/resource/img/anan_model.png'
+import anan_img from '@/resource/img/anan_model.webp'
 
 export function LayoutFooter() {
   return (
