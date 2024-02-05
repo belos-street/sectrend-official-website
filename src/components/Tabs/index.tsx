@@ -11,15 +11,19 @@ export type TabItemProps = {
 export type TabProps = {
   items: TabItemProps
   defaultActiveKey: string
+  action?: 'click' | 'hover' // 默认点击切换
   onChange?: (key: string) => void
 }
 
-export const Tabs: React.FC<TabProps> = ({ items, defaultActiveKey, onChange }) => {
+export const Tabs: React.FC<TabProps> = ({ items, defaultActiveKey, onChange, action }) => {
+  /** init */
+  !action && (action = 'click')
   const [activeTab, setActiveTab] = useState(defaultActiveKey || items[0].key)
   const handleTabChange = (tabKey: string) => {
     setActiveTab(tabKey)
     onChange && onChange(tabKey)
   }
+
   return (
     <div className="sc-tabs">
       <div className="sc-tab__header">
@@ -27,7 +31,8 @@ export const Tabs: React.FC<TabProps> = ({ items, defaultActiveKey, onChange }) 
           <div
             className={`tab__header--item${item.key === activeTab ? ' header__item--active' : ''}`}
             key={item.key}
-            onClick={() => handleTabChange(item.key)}>
+            onClick={() => action === 'click' && handleTabChange(item.key)}
+            onMouseEnter={() => action === 'hover' && handleTabChange(item.key)}>
             {item.label}
           </div>
         ))}

@@ -26,8 +26,8 @@ export const Client: React.FC = () => {
   return (
     <section className="section__container client__section">
       <h1>合作客户</h1>
-      <ImageScrollList imgList={imgList_Frist} height={48} direction="left" />
-      <ImageScrollList imgList={imgList_Second} height={48} direction="right" />
+      <ImageScrollList imgList={imgList_Frist} height={48} direction="left" repeats={3} />
+      <ImageScrollList imgList={imgList_Second} height={48} direction="right" repeats={3} />
     </section>
   )
 }

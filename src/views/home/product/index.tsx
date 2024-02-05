@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { AsTabs } from '@/components'
 import { TabItemProps } from '@/components/Tabs'
 import { useDeviceWidth } from '@/hooks/useDeviceWidth'
+import { useEffect, useRef } from 'react'
 
 const ChangeDeviceWidth = 1000 //当浏览器宽度低于1000px，切换mobile排版
 const items: TabItemProps = [
@@ -45,36 +46,47 @@ const schemeBtn = () => {
 
 export const ProductSection: React.FC = () => {
   const { windowWidth } = useDeviceWidth()
+  const normalScreenRef = useRef<HTMLDivElement>(null)
+
+  /** 控制显示效果 去掉生硬动画 */
+  useEffect(() => {
+    if (windowWidth >= ChangeDeviceWidth && normalScreenRef.current) {
+      normalScreenRef.current.classList.remove('screen__normal--hide')
+      normalScreenRef.current.classList.add('screen__normal--show', 'animate__animated', 'animate__fadeIn')
+    } else if (windowWidth < ChangeDeviceWidth && windowWidth > 0 && normalScreenRef.current) {
+      normalScreenRef.current.classList.remove('screen__normal--show')
+      normalScreenRef.current.classList.add('screen__normal--hide')
+    }
+  }, [windowWidth])
 
   return (
     <section className="product__section section__container">
       <h1>软件供应链安全，从代码安全开始</h1>
-      {windowWidth >= ChangeDeviceWidth && (
-        <div className="screen-center">
-          <AsTabs
-            defaultActiveKey="sca"
-            items={items.map((item) => {
-              const { content } = item
-              return {
-                ...item,
-                children: (
-                  <div className="tab__content animate__animated animate__fadeIn">
-                    <div className="tab__content--text">
-                      <div>
-                        <h2>{content.title}</h2>
-                        <p className="text-slogan">{content.slogan}</p>
-                      </div>
-                      <p className="doc">{content.doc}</p>
-                      <div>{schemeBtn()}</div>
+      <div className={`screen-center screen__normal`} ref={normalScreenRef}>
+        <AsTabs
+          defaultActiveKey="sca"
+          items={items.map((item) => {
+            const { content } = item
+            return {
+              ...item,
+              children: (
+                <div className="tab__content animate__animated animate__fadeIn">
+                  <div className="tab__content--text">
+                    <div>
+                      <h2>{content.title}</h2>
+                      <p className="text-slogan">{content.slogan}</p>
                     </div>
-                    <Image priority={true} src={content.img} alt={content.title} />
+                    <p className="doc">{content.doc}</p>
+                    <div>{schemeBtn()}</div>
                   </div>
-                )
-              }
-            })}
-          />
-        </div>
-      )}
+                  <Image priority={true} src={content.img} alt={content.title} />
+                </div>
+              )
+            }
+          })}
+          action="hover"
+        />
+      </div>
 
       {windowWidth < ChangeDeviceWidth && windowWidth > 0 && (
         <div className="screen__small animate__animated animate__fadeIn">
