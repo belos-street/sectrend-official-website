@@ -1,0 +1,26 @@
+@keyframes img-scroll-x-l2r
+  0%
+    transform: translateX(-100%)
+
+  100%
+    transform: translateX(100vw)
+
+@keyframes img-scroll-x-r2l
+  0%
+    transform: translateX(100vw)
+
+  100%
+    transform: translateX(-100%)
+
+$duration: 20s
+.image-scroll__container
+  width: 100%
+  position: relative
+  height: 100%
+  .scroll-list__view
+    display: inline-flex
+    gap: 32px
+  .scroll-list__view--r2l
+    animation: img-scroll-x-r2l $duration linear infinite
+  .scroll-list__view--l2r
+    animation: img-scroll-x-l2r $duration linear infinite
