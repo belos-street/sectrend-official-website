@@ -236,6 +236,12 @@ $article-gap: 36px
       padding: 2px 8px
     .article-item__describe
       font-size: $sc-font-s3
+    .article-item__title
+      display: flex
+      justify-content: space-between
+      align-items: center
+      p
+        display: none
   .article-item__list
     display: none
 
@@ -244,3 +250,50 @@ $article-gap: 36px
     height: 100%
     flex-direction: column
     justify-content: space-between
+
+.article-item__content
+  height: 100%
+  display: flex
+  align-items: center
+.article-item--actived
+  transition: $transition-ease
+
+  .article-item__img
+    display: none
+  .article-item__describe
+    display: none
+  .article-item__header
+    .article-item__title
+      p
+        display: flex
+        cursor: pointer
+        transform: translateY(12px)
+        font-size: $sc-font-s4
+        color: $sc-fc-p3
+  .article-item__list
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: space-between
+    gap: 24px
+    flex: 1
+    li
+      flex: 1
+      position: relative
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+
+      h3
+        font-size: $sc-font-s3
+        color: $sc-fc-p1
+      p
+        font-size: $sc-font-s5
+        color: $sc-fc-p3
+    li:not(:last-child)::after
+      content: ''
+      position: absolute
+      bottom: -12px
+      height: 1px
+      width: 100%
+      background-color: $sc-cp-split

@@ -1,36 +1,49 @@
 import { Tag } from 'antd'
-import { Insights_img, Insights } from '../img'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
-type Props = {
-  data: {
-    titleImg: string
-    img: string
-    tag: {
-      list: string[]
-      color: string
-    }
-    describe: string
+export type ArticleItemProps = {
+  titleImg: string
+  img: StaticImageData
+  tag: {
+    list: string[]
+    color: string
+  }
+  describe: string
+  list: {
+    title: string
+    content: string
+    time: string
   }[]
-  key: 'insights' | 'news' | 'trending' | 'product'
+  name: 'insights' | 'news' | 'trending' | 'product'
 }
-export const ArticleItem: React.FC = (props) => {
+export const ArticleItem: React.FC<ArticleItemProps> = ({ titleImg, img, tag, describe, list, name }) => {
   return (
     <div className="article-item">
       <div className="article-item__header">
         <div className="article-item__title">
-          <Image src={Insights} alt="Insights" />
+          <Image src={titleImg} alt={name} />
+          <p>查看全部</p>
         </div>
         <div className="article-item__tag">
-          <Tag>技术干货</Tag>
-          <Tag color="#33D1E3">前沿观点</Tag>
+          {tag.list.map((item, index) => (
+            <Tag key={index} color={tag.color}>
+              {item}
+            </Tag>
+          ))}
         </div>
-        <div className="article-item__describe">安势带你了解最新技术干货，获取前沿观点及政策解读。</div>
+        <div className="article-item__describe">{describe}</div>
       </div>
       <div className="article-item__content">
-        <Image src={Insights_img} alt="Insights" className="article-item__img" height={180} width={180} />
-
-        <div className="article-item__list">55</div>
+        <Image src={img} alt={name} className="article-item__img" height={180} width={180} />
+        <ul className="article-item__list">
+          {list.map((item, index) => (
+            <li key={index}>
+              <h3>{item.title}</h3>
+              <p>{item.content}</p>
+              <p>{item.time}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   )
