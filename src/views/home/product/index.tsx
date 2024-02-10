@@ -2,7 +2,7 @@
 import { Button } from 'antd'
 import sca_preview from '@/resource/img/sca_preview.png'
 import Image from 'next/image'
-import { AsTabs } from '@/components'
+import { AsTabs, SectionTitle } from '@/components'
 import { TabItemProps } from '@/components/Tabs'
 import { useDeviceWidth } from '@/hooks/useDeviceWidth'
 import { useEffect, useRef } from 'react'
@@ -61,7 +61,7 @@ export const ProductSection: React.FC = () => {
 
   return (
     <section className="product__section section__container">
-      <h1>软件供应链安全，从代码安全开始</h1>
+      <SectionTitle>软件供应链安全，从代码安全开始</SectionTitle>
       <div className={`screen-center screen__normal`} ref={normalScreenRef}>
         <AsTabs
           defaultActiveKey="sca"
@@ -94,7 +94,7 @@ export const ProductSection: React.FC = () => {
             const { content } = item
             return (
               <section className="product__item" key={item.key}>
-                <Image src={content.img} alt={content.title} />
+                <Image src={content.img} alt={content.title} priority={true} />
                 <h2>{content.title}</h2>
                 <p>{content.slogan}</p>
                 <p className="doc">{content.doc}</p>

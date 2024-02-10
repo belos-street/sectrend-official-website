@@ -6,10 +6,12 @@ import { useEffect, useState } from 'react'
  */
 export function useScrollDistance() {
   const [scrollDistance, setScrollDistance] = useState<number>(0)
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollDistance(window.scrollY)
     }
+    handleScroll()
     window.addEventListener('scroll', debounce(handleScroll, 200))
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])

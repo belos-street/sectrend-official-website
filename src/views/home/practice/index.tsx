@@ -5,6 +5,7 @@ import semiconductor_img from './img/semiconductor.png'
 import { StaticImageData } from 'next/image'
 import { Button } from 'antd'
 import Image from 'next/image'
+import { SectionTitle } from '@/components'
 
 type Practice = {
   title: string
@@ -43,7 +44,7 @@ const practiceList: Practice[] = [
 export const Practice: React.FC = () => {
   return (
     <section className="section__container practice__section">
-      <h1>与行业客户共建软件供应链安全最佳实践</h1>
+      <SectionTitle>与行业客户共建软件供应链安全最佳实践</SectionTitle>
       <section className="screen-center practice__content">
         {practiceList.map((item) => (
           <div key={item.title} className="practice__item">
