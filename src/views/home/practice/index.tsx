@@ -44,7 +44,7 @@ const practiceList: Practice[] = [
 export const Practice: React.FC = () => {
   return (
     <section className="section__container practice__section">
-      <SectionTitle>与行业客户共建软件供应链安全最佳实践</SectionTitle>
+      <SectionTitle animate="animate__fadeIn">与行业客户共建软件供应链安全最佳实践</SectionTitle>
       <section className="screen-center practice__content">
         {practiceList.map((item) => (
           <div key={item.title} className="practice__item">

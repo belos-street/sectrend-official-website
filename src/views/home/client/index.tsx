@@ -26,7 +26,7 @@ const imgList_Second = [jiyue, bmw, nio, lingpao, zone, yanfeng, unisoc, dahua, 
 export const Client: React.FC = () => {
   return (
     <section className="section__container client__section">
-      <SectionTitle>合作客户</SectionTitle>
+      <SectionTitle animate="animate__fadeIn">合作客户</SectionTitle>
       <ImageScrollList imgList={imgList_Frist} height={48} direction="left" repeats={3} />
       <ImageScrollList imgList={imgList_Second} height={48} direction="right" repeats={3} />
     </section>

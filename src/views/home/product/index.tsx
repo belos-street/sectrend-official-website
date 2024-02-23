@@ -61,7 +61,7 @@ export const ProductSection: React.FC = () => {
 
   return (
     <section className="product__section section__container">
-      <SectionTitle>软件供应链安全，从代码安全开始</SectionTitle>
+      <SectionTitle animate="animate__fadeIn">软件供应链安全，从代码安全开始</SectionTitle>
       <div className={`screen-center screen__normal`} ref={normalScreenRef}>
         <AsTabs
           defaultActiveKey="sca"

@@ -4,9 +4,7 @@ import StyledComponentsRegistry from '@/components/AntdRegistry'
 import '@/styles/base.sass'
 import '@/styles/common.sass'
 import 'animate.css'
-import { LayoutFooter } from '@/layouts/ly-footer'
-import { LayoutHeader } from '@/layouts/ly-header'
-import { LayoutAffix } from '@/layouts/affix'
+import { LayoutFloatButton, LayoutHeader, LayoutFooter } from '@/layouts'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,9 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <StyledComponentsRegistry>
         <body className={inter.className} id="sectrend-site">
           <LayoutHeader />
+          <LayoutFloatButton />
           {children}
           <LayoutFooter />
-          <LayoutAffix />
         </body>
       </StyledComponentsRegistry>
     </html>
