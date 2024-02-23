@@ -6,6 +6,7 @@ import '@/styles/common.sass'
 import 'animate.css'
 import { LayoutFooter } from '@/layouts/ly-footer'
 import { LayoutHeader } from '@/layouts/ly-header'
+import { LayoutAffix } from '@/layouts/affix'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <LayoutHeader />
           {children}
           <LayoutFooter />
+          <LayoutAffix />
         </body>
       </StyledComponentsRegistry>
     </html>
