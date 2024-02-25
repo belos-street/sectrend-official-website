@@ -1,25 +1,15 @@
 import i18next from 'i18next'
+import { zh } from './lang/zh'
+import { en } from './lang/en'
 
 i18next.init({
-  lng: 'en',
+  lng: 'zh', //en , zh
   resources: {
-    en: {
-      translation: {
-        hello: 'hello world'
-      },
-      pro: {
-        hello2: 'hello world2'
-      }
-    },
-    zh: {
-      translation: {
-        hello: '你好'
-      },
-      pro: {
-        hello2: '你好2'
-      }
-    }
+    en,
+    zh
   }
 })
 
-export { i18next }
+const t = i18next.t
+
+export { i18next, t }

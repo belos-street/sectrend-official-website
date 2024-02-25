@@ -1,9 +1,10 @@
 import React from 'react'
 import './style.sass'
-import { MailOutlined, PhoneOutlined, BankOutlined } from '@ant-design/icons'
+import { MailOutlined, PhoneOutlined, BankOutlined, WechatOutlined, LinkedinFilled, ZhihuOutlined } from '@ant-design/icons'
 import Image from 'next/image'
 import sologan_img from './img/slogan.webp'
 import anan_img from '@/resource/img/anan_model.webp'
+import { t } from '@/i18n'
 
 export function LayoutFooter() {
   return (
@@ -32,35 +33,28 @@ export function LayoutFooter() {
           </section>
         </section>
         <section className=" list">
-          <h3>产品中心</h3>
+          <h3>{t('产品中心', { ns: 'layout' })}</h3>
           <ul>
             <li>清源 CleanSource 软件成分分析扫描 | SCA</li>
             <li>清本 CleanCode 静态代码扫描 | SAST </li>
             <li>清正 CleanBinary 二进制代码扫描</li>
-            <li>车联网安全服务</li>
-            <li>网络安全咨询服务</li>
+            <li>{t('车联网安全服务', { ns: 'layout' })}</li>
+            <li>{t('网络安全咨询服务', { ns: 'layout' })}</li>
+            <li>{t('开源合规治理咨询', { ns: 'layout' })}</li>
           </ul>
         </section>
-        <section className=" list">
-          <h3>关于</h3>
+        <section className="list">
+          <h3>{t('关于', { ns: 'layout' })}</h3>
           <ul>
-            <li>关于我们</li>
-            <li>加入我们</li>
-            <li>联系我们</li>
+            <li>{t('关于我们', { ns: 'layout' })}</li>
+            <li>{t('加入我们', { ns: 'layout' })}</li>
+            <li>{t('联系我们', { ns: 'layout' })}</li>
+            <li className="contact">
+              <WechatOutlined />
+              <LinkedinFilled />
+              <ZhihuOutlined />
+            </li>
           </ul>
-        </section>
-        <section className="follow">
-          <h3>关注我们</h3>
-          <div className="container">
-            <div className="qr-code--box">
-              <div className="qr-code business" />
-              <p>商务合作</p>
-            </div>
-            <div className="qr-code--box">
-              <div className="qr-code wechat" />
-              <p>微信公众号</p>
-            </div>
-          </div>
         </section>
       </section>
       <section className="screen-center copyright">

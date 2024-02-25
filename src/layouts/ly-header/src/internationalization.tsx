@@ -1,14 +1,17 @@
 import { GlobalOutlined } from '@ant-design/icons'
 import { Dropdown, MenuProps } from 'antd'
+import { i18next } from '@/i18n'
 
 const items: MenuProps['items'] = [
   {
-    key: '4',
-    label: '中文'
+    key: 'zh',
+    label: '中文',
+    onClick: () => i18next.changeLanguage('zh')
   },
   {
-    key: '3',
-    label: 'English'
+    key: 'en',
+    label: 'English',
+    onClick: () => i18next.changeLanguage('en')
   }
 ]
 

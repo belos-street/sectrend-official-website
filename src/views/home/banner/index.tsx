@@ -1,4 +1,5 @@
 'use client'
+import { t } from '@/i18n'
 import { Carousel, Button } from 'antd'
 
 export const Banner: React.FC = () => (
@@ -7,15 +8,15 @@ export const Banner: React.FC = () => (
       <div className="banner__container banner__container--first">
         <div className="screen-center container__box">
           <h1>
-            供应链安全治理
+            {t('构建可信代码', { ns: 'home' })}
             <br />
-            解决方案
+            {t('安全合规无忧', { ns: 'home' })}
           </h1>
-          <p>安势信息专注于构建DevSecOps工具链，致力于提供世界级的应用安全产品</p>
+          <p> {t('安势信息助您一站式搭建DevSecOps开发流程', { ns: 'home' })}</p>
           <div className="btn__group">
-            <Button type="primary">了解详情</Button>
+            <Button type="primary"> {t('了解详情', { ns: 'home' })}</Button>
             <Button type="primary" ghost>
-              联系我们
+              {t('联系我们', { ns: 'home' })}
             </Button>
           </div>
         </div>
