@@ -42,7 +42,7 @@ const dataList: ArticleItemProps[] = [
       color: '#1A62F5',
       list: ['产品动态', '活动曝光']
     },
-    describe: '第一时间了解产品动态，活动曝光等相关资讯',
+    describe: '第一时间了解产品动态，活动曝光等相关资讯。',
     list: [
       {
         title: '如何使用TypeScript实现一个简单的MVVM框架',
@@ -69,7 +69,7 @@ const dataList: ArticleItemProps[] = [
       color: '#21B351',
       list: ['网络安全', '开源生态']
     },
-    describe: '软件供应链安全行业动态，开源产业生态相关讯息一手掌握',
+    describe: '软件供应链安全行业动态，开源产业生态相关讯息一手掌握。',
     list: [
       {
         title: '如何使用TypeScript实现一个简单的MVVM框架',
@@ -96,7 +96,7 @@ const dataList: ArticleItemProps[] = [
       color: '#7B6DFF',
       list: ['正本清源']
     },
-    describe: '“正本清源”多条产品线超多一手资料尽在此处',
+    describe: '“正本清源”多条产品线超多一手资料尽在此处。',
     list: [
       {
         title: '如何使用TypeScript实现一个简单的MVVM框架',
