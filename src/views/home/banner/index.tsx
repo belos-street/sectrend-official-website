@@ -1,5 +1,6 @@
 'use client'
 import { t } from '@/i18n'
+import { gotoLegacyUrl } from '@/request/api'
 import { Carousel, Button } from 'antd'
 
 export const Banner: React.FC = () => (
@@ -14,8 +15,10 @@ export const Banner: React.FC = () => (
           </h1>
           <p> {t('安势信息助您一站式搭建DevSecOps开发流程', { ns: 'home' })}</p>
           <div className="btn__group">
-            <Button type="primary"> {t('了解详情', { ns: 'home' })}</Button>
-            <Button type="primary" ghost>
+            <Button type="primary" onClick={() => gotoLegacyUrl('sqsy')}>
+              {t('申请试用', { ns: 'home' })}
+            </Button>
+            <Button type="primary" ghost onClick={() => gotoLegacyUrl('lxwm')}>
               {t('联系我们', { ns: 'home' })}
             </Button>
           </div>

@@ -6,6 +6,7 @@ import { AsTabs, SectionTitle } from '@/components'
 import { TabItemProps } from '@/components/Tabs'
 import { useDeviceWidth } from '@/hooks/useDeviceWidth'
 import { useEffect, useRef } from 'react'
+import { gotoLegacyUrl } from '@/request/api'
 
 const ChangeDeviceWidth = 1000 //当浏览器宽度低于1000px，切换mobile排版
 const items: TabItemProps = [
@@ -41,8 +42,21 @@ const items: TabItemProps = [
   }
 ]
 
-const schemeBtn = () => {
-  return <Button type="primary">查看方案</Button>
+const schemeBtn = (key: string) => {
+  let url = ''
+  if (key === 'sca') {
+    url = 'CleanSourceSCA'
+  } else if (key === 'sast') {
+    url = 'qbsast'
+  } else {
+    return <></>
+  }
+
+  return (
+    <Button type="primary" onClick={() => gotoLegacyUrl(url)}>
+      查看方案
+    </Button>
+  )
 }
 
 export const ProductSection: React.FC = () => {
@@ -78,7 +92,7 @@ export const ProductSection: React.FC = () => {
                       <p className="text-slogan">{content.slogan}</p>
                     </div>
                     <p className="doc">{content.doc}</p>
-                    <div>{schemeBtn()}</div>
+                    <div>{schemeBtn(item.key)}</div>
                   </div>
                   <Image priority={true} src={content.img} alt={content.title} />
                 </div>
@@ -99,7 +113,7 @@ export const ProductSection: React.FC = () => {
                 <h2>{content.title}</h2>
                 <p>{content.slogan}</p>
                 <p className="doc">{content.doc}</p>
-                {schemeBtn()}
+                {schemeBtn(item.key)}
               </section>
             )
           })}
