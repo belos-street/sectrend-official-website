@@ -1,3 +1,5 @@
+'use client'
+
 import { t } from '@/i18n'
 import internet_img from './img/internet.png'
 import car_img from './img/car.png'
@@ -7,33 +9,39 @@ import { StaticImageData } from 'next/image'
 import { Button } from 'antd'
 import Image from 'next/image'
 import { SectionTitle } from '@/components'
+import { gotoLegacyUrl } from '@/request/api'
 
 type Practice = {
   title: string
   content: string[]
   img: StaticImageData
+  url: string
 }
 
 const practiceList: Practice[] = [
   {
     title: t('home:practice.互联网行业痛点'),
     content: [t('home:practice.互联网行业痛点content')],
-    img: internet_img
+    img: internet_img,
+    url: 'alzs_hlw'
   },
   {
     title: t('home:practice.汽车行业痛点'),
     content: [t('home:practice.汽车行业痛点content')],
-    img: car_img
+    img: car_img,
+    url: 'alzs_qc'
   },
   {
     title: t('home:practice.医疗行业痛点'),
     content: [t('home:practice.医疗行业痛点content')],
-    img: medical_img
+    img: medical_img,
+    url: 'alzs_yl'
   },
   {
     title: t('home:practice.半导体行业痛点'),
     content: [t('home:practice.半导体行业痛点content')],
-    img: semiconductor_img
+    img: semiconductor_img,
+    url: 'alzs_bdt'
   }
 ]
 
@@ -52,7 +60,9 @@ export const Practice: React.FC = () => {
                 ))}
               </div>
               <div>
-                <Button type="primary">{t('home:了解更多')}</Button>
+                <Button type="primary" onClick={() => gotoLegacyUrl(item.url)}>
+                  {t('home:了解更多')}
+                </Button>
               </div>
             </div>
             <Image src={item.img} alt={item.title} priority={true} />

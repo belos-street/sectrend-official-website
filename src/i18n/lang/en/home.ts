@@ -4,8 +4,11 @@ const text = {
   查看方案: '查看方案',
   查看全部: 'View All',
   了解更多: 'Lean More',
+  申请试用:'Free Trial',
   
   banner: {
+    构建可信代码: 'Build Trusted Code',
+    安全合规无忧: 'Advancing Security & Compliance',
     构建可信代码安全合规无忧: 'Build Trusted Code, Advancing Security & Compliance',
     构建可信代码安全合规无忧subtitle: 'Help you build a complete DevSecOps process to improve software supply chain visibility',
     车联网安全服务: 'IoV CyberSecurity Services',
@@ -85,8 +88,7 @@ const text = {
     合作社区: 'Community',
     合作高校研究机构: 'Academy',
   },
-  构建可信代码: 'Build Trusted Code',
-  安全合规无忧: 'Advancing Security & Compliance',
+
   合作客户: 'Sectrend is Trusted by',
   与行业头部客户共建软件供应链安全最佳实践: '与行业头部客户共建软件供应链安全最佳实践',
 }

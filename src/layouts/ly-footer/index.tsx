@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import './style.sass'
 import { MailOutlined, PhoneOutlined, BankOutlined, WechatOutlined, LinkedinFilled, ZhihuOutlined } from '@ant-design/icons'
@@ -5,6 +7,7 @@ import Image from 'next/image'
 import sologan_img from './img/slogan.webp'
 import anan_img from '@/resource/img/anan_model.webp'
 import { t } from '@/i18n'
+import { gotoLegacyUrl } from '@/request/api'
 
 export function LayoutFooter() {
   return (
@@ -32,23 +35,23 @@ export function LayoutFooter() {
             <p>{t('公司地址', { ns: 'layout' })}</p>
           </section>
         </section>
-        <section className=" list">
+        <section className="list">
           <h3>{t('产品中心', { ns: 'layout' })}</h3>
           <ul>
-            <li>{t('软件成分分析扫描', { ns: 'layout' })}</li>
+            <li onClick={() => gotoLegacyUrl('CleanSourceSCA')}>{t('软件成分分析扫描', { ns: 'layout' })}</li>
             <li>{t('二进制代码扫描', { ns: 'layout' })}</li>
-            <li>{t('静态代码扫描', { ns: 'layout' })}</li>
-            <li>{t('车联网安全服务', { ns: 'layout' })}</li>
+            <li onClick={() => gotoLegacyUrl('qbsast')}>{t('静态代码扫描', { ns: 'layout' })}</li>
+            <li onClick={() => gotoLegacyUrl('clwfw')}>{t('车联网安全服务', { ns: 'layout' })}</li>
             <li>{t('网络安全咨询服务', { ns: 'layout' })}</li>
-            <li>{t('开源合规治理咨询', { ns: 'layout' })}</li>
+            <li onClick={() => gotoLegacyUrl('sbom')}>{t('开源合规治理咨询', { ns: 'layout' })}</li>
           </ul>
         </section>
         <section className="list">
           <h3>{t('关于', { ns: 'layout' })}</h3>
           <ul>
-            <li>{t('关于我们', { ns: 'layout' })}</li>
-            <li>{t('加入我们', { ns: 'layout' })}</li>
-            <li>{t('联系我们', { ns: 'layout' })}</li>
+            <li onClick={() => gotoLegacyUrl('gsjs')}>{t('关于我们', { ns: 'layout' })}</li>
+            <li onClick={() => gotoLegacyUrl('recruit')}>{t('加入我们', { ns: 'layout' })}</li>
+            <li onClick={() => gotoLegacyUrl('lxwm')}>{t('联系我们', { ns: 'layout' })}</li>
             <li className="contact">
               <WechatOutlined />
               <LinkedinFilled />

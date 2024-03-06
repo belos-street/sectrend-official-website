@@ -3,7 +3,7 @@ import { zh } from './lang/zh'
 import { en } from './lang/en'
 
 i18next.init({
-  lng: 'en', //en , zh
+  lng: 'zh', //en , zh
   resources: {
     en,
     zh
