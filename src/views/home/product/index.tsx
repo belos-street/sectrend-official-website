@@ -1,5 +1,6 @@
 'use client'
 import { Button } from 'antd'
+import { t } from '@/i18n'
 import sca_preview from '@/resource/img/sca_preview.png'
 import Image from 'next/image'
 import { AsTabs, SectionTitle } from '@/components'
@@ -11,38 +12,38 @@ const ChangeDeviceWidth = 1000 //当浏览器宽度低于1000px，切换mobile�
 const items: TabItemProps = [
   {
     key: 'sca',
-    label: '清源 CleanSource SCA',
+    label: t('layout:清源CleanSourceSCA'),
     content: {
-      title: '清源 CleanSource SCA',
-      slogan: '高效管理企业开源组件安全与许可证合规',
-      doc: '清源CleanSource SCA作为一款拥有完全自主知识产权的的软件成分分析工具，提供多种先进的探测技术、全面的数据库和灵活的部署方式，帮助企业快速建立准确、全面的软件物料清单（SBOM），保证开源组件的高度可见性。依托强大的漏洞可达性分析和漏洞治理能力，助力企业降低和管理其应用中因使用开源软件和其他第三方软件引入的安全、质量和许可证合规风险。',
+      title: t('layout:清源CleanSourceSCA'),
+      slogan: t('home:product.scaSubtitle'),
+      doc: t('home:product.scaDescribe'),
       img: sca_preview
     }
   },
   {
     key: 'sast',
-    label: '清本 CleanCode SAST',
+    label: t('layout:清本CleanCodeSAST'),
     content: {
-      title: '清本 CleanCode SAST',
-      slogan: '发现代码缺陷，提升代码质量，从未如此简单',
-      doc: '清本CleanCode SAST作为一款企业级白盒静态代码扫描工具，凭借强大的检测能力、缺陷描述信息丰富、灵活的部署方式，帮助开发人员在软件开发生命周期（SDLC）早期持续自动化检测软件中包含违反安全编码标准、运行时错误和安全漏洞的编程缺陷，给出实时反馈和修复建议，助力开发团队优化工作流程，低成本持续提升代码交付质量。',
+      title: t('layout:清本CleanCodeSAST'),
+      slogan: t('home:product.sastSubtitle'),
+      doc: t('home:product.sastDescribe'),
       img: sca_preview
     }
   },
   {
     key: 'binary',
-    label: '清正 CleanBinary ',
+    label: t('layout:清正CleanBinary二进制检测'),
     content: {
-      title: '清正 CleanBinary',
-      slogan: '无需源码即可实现漏洞及合规扫描',
-      doc: '清正CleanBinary二进制代码扫描分析工具针对Linux安装包、Web部署包、安卓和鸿蒙应用、IoT固件包等二进制应用进行开源组件合规和漏洞检测。使用清正CleanBinary进行成分分析，无需依赖源码库或源文件、实现无入侵快速检测。针对引入的第三方软件包进行合规和安全漏洞排查。通过全面、直观的报告和专业的告警分析助力企业进行上线前自检、修复。',
+      title: t('layout:清正CleanBinary二进制检测'),
+      slogan: t('home:product.binarySubtitle'),
+      doc: t('home:product.binaryDescribe'),
       img: sca_preview
     }
   }
 ]
 
 const schemeBtn = () => {
-  return <Button type="primary">查看方案</Button>
+  return <Button type="primary">{t(`home:了解更多`)}</Button>
 }
 
 export const ProductSection: React.FC = () => {
@@ -62,7 +63,7 @@ export const ProductSection: React.FC = () => {
 
   return (
     <section className="product__section section__container">
-      <SectionTitle animate="animate__fadeIn">软件供应链安全，从代码安全开始</SectionTitle>
+      <SectionTitle animate="animate__fadeIn">{t('home:product.软件供应链安全始于代码安全')}</SectionTitle>
       <div className={`screen-center screen__normal`} ref={normalScreenRef}>
         <AsTabs
           defaultActiveKey="sca"

@@ -1,3 +1,4 @@
+import { t } from '@/i18n'
 import Image from 'next/image'
 import {
   caict_1,
@@ -23,19 +24,19 @@ const schoolImgList = [fudan, jiaotong]
 export const Cooperate: React.FC = () => {
   return (
     <section className="section__container cooperate__section">
-      <SectionTitle animate="animate__fadeIn">合作机构/基金会</SectionTitle>
+      <SectionTitle animate="animate__fadeIn">{t('home:cooperate.合作机构基金会')}</SectionTitle>
       <div className="img__container">
         {organImgList.map((item, index) => (
           <Image key={index} src={item} alt="" />
         ))}
       </div>
-      <SectionTitle animate="animate__fadeIn">合作社区</SectionTitle>
+      <SectionTitle animate="animate__fadeIn">{t('home:cooperate.合作社区')}</SectionTitle>
       <div className="img__container">
         {communityImgList.map((item, index) => (
           <Image key={index} src={item} alt="" />
         ))}
       </div>
-      <SectionTitle animate="animate__fadeIn">合作高校/研究机构</SectionTitle>
+      <SectionTitle animate="animate__fadeIn">{t('home:cooperate.合作高校研究机构')}</SectionTitle>
       <div className="img__container">
         {schoolImgList.map((item, index) => (
           <Image key={index} src={item} alt="" />

@@ -1,6 +1,7 @@
 'use client'
 
 import { Divider, Dropdown, Menu, MenuProps } from 'antd'
+import { t } from '@/i18n'
 import './style.sass'
 import { MenuOutlined } from '@ant-design/icons'
 import { Internationalization } from './src/internationalization'
@@ -9,57 +10,57 @@ import { gotoLegacyUrl } from '@/request/api'
 
 const items: MenuProps['items'] = [
   {
-    label: '首页',
+    label: t('首页', { ns: 'layout' }),
     key: 'home',
     disabled: true
   },
   {
-    label: '安全产品',
+    label: t('安全产品', { ns: 'layout' }),
     key: 'SubMenu',
     children: [
       {
-        label: '清源CleanSource SCA',
+        label: t('清源CleanSourceSCA', { ns: 'layout' }),
         key: 'CleanSourceSCA'
       },
       {
-        label: '清正CleanBinary 二进制检测',
+        label: t('清正CleanBinary二进制检测', { ns: 'layout' }),
         key: 'setting:2',
         disabled: true
       },
       {
-        label: '清本CleanCode SAST',
+        label: t('清本CleanCodeSAST', { ns: 'layout' }),
         key: 'qbsast'
       }
     ]
   },
   {
-    label: '安全服务',
+    label: t('安全服务', { ns: 'layout' }),
     key: 'mail1',
     children: [
       {
-        label: '车联网安全服务',
+        label: t('车联网安全服务', { ns: 'layout' }),
         key: 'clwfw'
       },
       {
-        label: '开源合规治理咨询',
+        label: t('开源合规治理咨询', { ns: 'layout' }),
         key: 'sbom'
       },
       {
-        label: '网络安全咨询&服务',
+        label: t('网络安全咨询服务', { ns: 'layout' }),
         type: 'group',
         children: [
           {
-            label: '代码审计',
+            label: t('代码审计', { ns: 'layout' }),
             key: 'setting:21',
             disabled: true
           },
           {
-            label: '安全漏洞扫描',
+            label: t('安全漏洞扫描', { ns: 'layout' }),
             key: 'setting:22',
             disabled: true
           },
           {
-            label: '渗透测试',
+            label: t('渗透测试', { ns: 'layout' }),
             key: 'setting:23',
             disabled: true
           }
@@ -68,45 +69,45 @@ const items: MenuProps['items'] = [
     ]
   },
   {
-    label: '行业解决方案',
+    label: t('行业解决方案', { ns: 'layout' }),
     key: 'mail2',
     children: [
       {
-        label: '互联网行业解决方案',
+        label: t('互联网行业解决方案', { ns: 'layout' }),
         key: 'alzs_hlw'
       },
       {
-        label: '汽车行业解决方案',
+        label: t('汽车行业解决方案', { ns: 'layout' }),
         key: 'alzs_qc'
       },
       {
-        label: '医疗器械行业解决方案',
+        label: t('医疗器械行业解决方案', { ns: 'layout' }),
         key: 'alzs_yl'
       },
       {
-        label: '半导体行业解决方案',
+        label: t('半导体行业解决方案', { ns: 'layout' }),
         key: 'alzs_bdt'
       }
     ]
   },
   {
-    label: '关于安势',
+    label: t('关于安势', { ns: 'layout' }),
     key: 'mail3',
     children: [
       {
-        label: '公司简介',
+        label: t('公司简介', { ns: 'layout' }),
         key: 'gsjs'
       },
       {
-        label: '安势动态',
+        label: t('安势动态', { ns: 'layout' }),
         key: 'jsbk'
       },
       {
-        label: '加入我们',
+        label: t('加入我们', { ns: 'layout' }),
         key: 'recruit'
       },
       {
-        label: '联系我们',
+        label: t('联系我们', { ns: 'layout' }),
         key: 'lxwm'
       }
     ]
@@ -126,7 +127,7 @@ export const LayoutHeader: React.FC = () => {
         <section className="header__container--left">
           <div className="logo__text--black" />
           <Divider type="vertical" className="divider" />
-          安势
+          {t('安势', { ns: 'layout' })}
         </section>
         <section className="header__container--center">
           <Menu mode="horizontal" items={items} id="header-ant-menu" onClick={handleMenuClick} />

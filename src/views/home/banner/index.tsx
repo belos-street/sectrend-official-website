@@ -7,16 +7,12 @@ export const Banner: React.FC = () => (
     <div>
       <div className="banner__container banner__container--first">
         <div className="screen-center container__box">
-          <h1>
-            {t('构建可信代码', { ns: 'home' })}
-            <br />
-            {t('安全合规无忧', { ns: 'home' })}
-          </h1>
-          <p> {t('安势信息助您一站式搭建DevSecOps开发流程', { ns: 'home' })}</p>
+          <h1>{t('home:banner.构建可信代码安全合规无忧')}</h1>
+          <p>{t('home:banner.构建可信代码安全合规无忧subtitle')}</p>
           <div className="btn__group">
-            <Button type="primary"> {t('了解详情', { ns: 'home' })}</Button>
+            <Button type="primary"> {t('home:了解详情')}</Button>
             <Button type="primary" ghost>
-              {t('联系我们', { ns: 'home' })}
+              {t('home:联系我们')}
             </Button>
           </div>
         </div>

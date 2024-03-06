@@ -10,7 +10,7 @@ export function LayoutFooter() {
   return (
     <footer className="layout-footer">
       <section className="show">
-        <Image src={sologan_img} alt="正本清源，不止于安全" className="sologan__img" />
+        <Image src={sologan_img} alt={t('正本清源不止于安全', { ns: 'layout' })} className="sologan__img" />
         <Image src={anan_img} alt="" className="anan__img" />
       </section>
       <section className="screen-center information">
@@ -29,15 +29,15 @@ export function LayoutFooter() {
           </section>
           <section className="text-icon">
             <BankOutlined />
-            <p>上海市徐汇区云锦路500号绿地汇中心A座2018室</p>
+            <p>{t('公司地址', { ns: 'layout' })}</p>
           </section>
         </section>
         <section className=" list">
           <h3>{t('产品中心', { ns: 'layout' })}</h3>
           <ul>
-            <li>清源 CleanSource 软件成分分析扫描 | SCA</li>
-            <li>清本 CleanCode 静态代码扫描 | SAST </li>
-            <li>清正 CleanBinary 二进制代码扫描</li>
+            <li>{t('软件成分分析扫描', { ns: 'layout' })}</li>
+            <li>{t('二进制代码扫描', { ns: 'layout' })}</li>
+            <li>{t('静态代码扫描', { ns: 'layout' })}</li>
             <li>{t('车联网安全服务', { ns: 'layout' })}</li>
             <li>{t('网络安全咨询服务', { ns: 'layout' })}</li>
             <li>{t('开源合规治理咨询', { ns: 'layout' })}</li>

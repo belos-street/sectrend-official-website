@@ -1,4 +1,5 @@
 import { Tag } from 'antd'
+import { t } from '@/i18n'
 import Image, { StaticImageData } from 'next/image'
 
 export type ArticleItemProps = {
@@ -22,7 +23,7 @@ export const ArticleItem: React.FC<ArticleItemProps> = ({ titleImg, img, tag, de
       <div className="article-item__header">
         <div className="article-item__title">
           <Image src={titleImg} alt={name} />
-          <p>查看全部</p>
+          <p>{t('home:查看全部')}</p>
         </div>
         <div className="article-item__tag">
           {tag.list.map((item, index) => (

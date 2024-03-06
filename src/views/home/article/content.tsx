@@ -1,5 +1,6 @@
 'use client'
 
+import { t } from '@/i18n'
 import { useHover } from '@/hooks/useHover'
 import { useEffect, useRef, memo } from 'react'
 import { RowAnimation, ItemAnimation } from './animation'
@@ -8,14 +9,14 @@ import { Insights_img, Insights, News_img, News, Trending_img, Trending, Product
 
 const dataList: ArticleItemProps[] = [
   {
-    name: 'insights',
+    name: t('home:article.势说新语'),
     titleImg: Insights,
     img: Insights_img,
     tag: {
       color: '#00C5DC',
-      list: ['技术干货', '前沿观点']
+      list: [t('home:article.技术干货'), t('home:article.前沿观点')]
     },
-    describe: '安势带你了解最新技术干货，获取前沿观点及政策解读。',
+    describe: t('home:article.insightsDescribe'),
     list: [
       {
         title: '如何使用TypeScript实现一个简单的MVVM框架',
@@ -35,14 +36,14 @@ const dataList: ArticleItemProps[] = [
     ]
   },
   {
-    name: 'news',
+    name: t('home:article.安势快讯'),
     titleImg: News,
     img: News_img,
     tag: {
       color: '#1A62F5',
-      list: ['产品动态', '活动曝光']
+      list: [t('home:article.产品动态'), t('home:article.活动曝光')]
     },
-    describe: '第一时间了解产品动态，活动曝光等相关资讯。',
+    describe: t('home:article.newsDescribe'),
     list: [
       {
         title: '如何使用TypeScript实现一个简单的MVVM框架',
@@ -62,14 +63,14 @@ const dataList: ArticleItemProps[] = [
     ]
   },
   {
-    name: 'trending',
+    name: t('home:article.行业信息'),
     titleImg: Trending,
     img: Trending_img,
     tag: {
       color: '#21B351',
-      list: ['网络安全', '开源生态']
+      list: [t('home:article.网络安全'), t('home:article.开源生态')]
     },
-    describe: '软件供应链安全行业动态，开源产业生态相关讯息一手掌握。',
+    describe: t('home:article.trendingDescribe'),
     list: [
       {
         title: '如何使用TypeScript实现一个简单的MVVM框架',
@@ -89,14 +90,14 @@ const dataList: ArticleItemProps[] = [
     ]
   },
   {
-    name: 'product',
+    name: t('home:article.研发相关'),
     titleImg: Product,
     img: Product_img,
     tag: {
       color: '#7B6DFF',
-      list: ['正本清源']
+      list: [t('home:article.正本清源')]
     },
-    describe: '“正本清源”多条产品线超多一手资料尽在此处。',
+    describe: t('home:article.productDescribe'),
     list: [
       {
         title: '如何使用TypeScript实现一个简单的MVVM框架',
