@@ -40,7 +40,10 @@ const text = {
   
   软件成分分析扫描: '清源 CleanSource 软件成分分析扫描 | SCA',
   静态代码扫描: '清本 CleanCode 静态代码扫描 | SAST',
-  二进制代码扫描:'清正 CleanBinary 二进制代码扫描'
+  二进制代码扫描: '清正 CleanBinary 二进制代码扫描',
+  
+  商务合作: '商务合作',
+  微信公众号:'微信公众号'
 }
 
 export default text

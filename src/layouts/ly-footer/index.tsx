@@ -3,11 +3,29 @@
 import React from 'react'
 import './style.sass'
 import { MailOutlined, PhoneOutlined, BankOutlined, WechatOutlined, LinkedinFilled, ZhihuOutlined } from '@ant-design/icons'
+import { Tooltip } from 'antd'
 import Image from 'next/image'
 import sologan_img from './img/slogan.webp'
 import anan_img from '@/resource/img/anan_model.webp'
+import wechat from '@/resource/img/wechat.png'
+import subscription from '@/resource/img/subscription.png'
 import { t } from '@/i18n'
 import { gotoLegacyUrl } from '@/request/api'
+
+const WechatTipTitle = () => {
+  return (
+    <div className="wechat-tooltip-title">
+      <div>
+        <Image src={wechat} alt={t(`layout:商务合作`)} className="anan__img" />
+        {t(`layout:商务合作`)}
+      </div>
+      <div>
+        <Image src={subscription} alt={t(`layout:微信公众号`)} className="anan__img" />
+        {t(`layout:微信公众号`)}
+      </div>
+    </div>
+  )
+}
 
 export function LayoutFooter() {
   return (
@@ -53,9 +71,15 @@ export function LayoutFooter() {
             <li onClick={() => gotoLegacyUrl('recruit')}>{t('加入我们', { ns: 'layout' })}</li>
             <li onClick={() => gotoLegacyUrl('lxwm')}>{t('联系我们', { ns: 'layout' })}</li>
             <li className="contact">
-              <WechatOutlined />
-              <LinkedinFilled />
-              <ZhihuOutlined />
+              <Tooltip title={WechatTipTitle()} arrow={true} overlayClassName="footer__wechat-tooltip">
+                <WechatOutlined />
+              </Tooltip>
+              <a href="https://www.linkedin.cn" target="_blank">
+                <LinkedinFilled />
+              </a>
+              <a href=" https://www.zhihu.com/org/an-shi-xin-xi-sectrend" target="_blank">
+                <ZhihuOutlined />
+              </a>
             </li>
           </ul>
         </section>

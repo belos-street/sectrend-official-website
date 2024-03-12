@@ -2,6 +2,8 @@
 import { Button } from 'antd'
 import { t } from '@/i18n'
 import sca_preview from '@/resource/img/sca_preview.png'
+import sast_preview from '@/resource/img/sast_preview.png'
+import binary_preview from '@/resource/img/binary_preview.png'
 import Image from 'next/image'
 import { AsTabs, SectionTitle } from '@/components'
 import { TabItemProps } from '@/components/Tabs'
@@ -28,7 +30,7 @@ const items: TabItemProps = [
       title: t('layout:清本CleanCodeSAST'),
       slogan: t('home:product.sastSubtitle'),
       doc: t('home:product.sastDescribe'),
-      img: sca_preview
+      img: sast_preview
     }
   },
   {
@@ -38,7 +40,7 @@ const items: TabItemProps = [
       title: t('layout:清正CleanBinary二进制检测'),
       slogan: t('home:product.binarySubtitle'),
       doc: t('home:product.binaryDescribe'),
-      img: sca_preview
+      img: binary_preview
     }
   }
 ]
